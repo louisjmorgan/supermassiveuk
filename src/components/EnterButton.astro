@@ -2,7 +2,7 @@
 const { href, text, id, children, color } = Astro.props;
 ---
 
-<button class="btn" id={id}>
+<button class="btn py-4 px-3 sm:px-5 lg:px-10" id={id}>
   <slot />
   <div>
     <span></span><span></span><span></span><span></span><span></span>
@@ -12,7 +12,7 @@ const { href, text, id, children, color } = Astro.props;
 <style lang="scss" define:vars={{ c: color }}>
   .btn {
     color: var(--c);
-    padding: 0.5em 5em;
+    // padding: 0.5em 3em;
     box-shadow: 0px 0px 0px 0px var(--c);
     // width: 12em;
     // height: 3em;
