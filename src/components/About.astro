@@ -4,10 +4,13 @@ import WaveHeader from "./WaveHeader.astro";
 ---
 
 <WaveHeader class="wave">
-  <div class="w-full flex flex-col items-center break-words">
-    <div class="w-3/4 md:w-1/2 flex flex-col items-center">
+  <div
+    class="w-full flex flex-col items-center break-words scroll-my-16 md:scroll-my-32"
+    id="about"
+  >
+    <div class="w-3/4 sm:w-2/3 md:w-[70ch] flex flex-col items-center m-0 p-0">
       <h1
-        class="w-full font-display z-10 text-2xl sm:text-4xl md:text-5xl text-white flex flex-col items-center gap-3 mb-12 my-12 md:my-0"
+        class="w-full font-display z-10 text-3xl sm:text-4xl md:text-5xl text-white flex flex-col items-center gap-3 mb-3 md:mb-8 my-12 sm:my-0"
       >
         <span class="font-sans self-start text-l sm:text-2xl md:text-4xl"
           >We are</span
@@ -16,7 +19,7 @@ import WaveHeader from "./WaveHeader.astro";
         >
       </h1>
       <p
-        class="self-end text-l sm:text-xl md:2xl text-white font-sans max-w-[30ch] mt-1 md:mt-12"
+        class="self-end text-l sm:text-xl md:2xl text-white font-sans max-w-[30ch] md:max-w-[40ch] mt-1 md:mt-8"
       >
         Dedicated to bringing exciting interactive art to the UK.
       </p>
@@ -41,6 +44,9 @@ import WaveHeader from "./WaveHeader.astro";
 </section>
 
 <style lang="scss">
+  // #about {
+  //   scroll-margin: 10rem;
+  // }
   .wave {
     // background: #f0f0f0;
     background: linear-gradient(
