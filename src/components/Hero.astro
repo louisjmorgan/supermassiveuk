@@ -1,0 +1,50 @@
+---
+import CldVideo from "./CldVideo.astro";
+import EnterButton from "./EnterButton.astro";
+
+const { src, poster } = Astro.props;
+interface Props {
+  src: string;
+  poster?: string;
+}
+const onHover = () => console.log("hover");
+---
+
+<section class="flex flex-col h-screen box">
+  <div class="w-100 relative basis-4/5">
+    <CldVideo
+      id="splash-video"
+      src={src}
+      poster={poster}
+      autoplay={true}
+      loop={false}
+      class="absolute h-full w-full top-0 left-0 object-fit"
+      aria-label="Welcome to supermassive.uk"
+    />
+  </div>
+  <div class="basis-1/5 flex flex-col justify-start items-center m-0 p-0">
+    <EnterButton color="white" id="enter-button">
+      <a href="#about" class="text-4xl font-display">ENTER</a>
+    </EnterButton>
+  </div>
+</section>
+<style>
+  section {
+  }
+</style>
+<script>
+  // Import npm modules.
+
+  // Find our component DOM on the page.
+  const button = document.querySelector("#enter-button");
+  const video: HTMLMediaElement | null =
+    document.querySelector("#splash-video");
+  console.log(video);
+  // Add event listeners to fire confetti when a button is clicked.
+  if (button && video) {
+    button.addEventListener("mouseenter", () => {
+      video.currentTime = 3.5;
+      video.play();
+    });
+  }
+</script>

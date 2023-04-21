@@ -1,0 +1,73 @@
+---
+const { href, text, id, children, color } = Astro.props;
+---
+
+<button class="btn" id={id}>
+  <slot />
+  <div>
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+</button>
+
+<style lang="scss" define:vars={{ c: color }}>
+  .btn {
+    color: var(--c);
+    padding: 0.5em 5em;
+    box-shadow: 0px 0px 0px 0px var(--c);
+    // width: 12em;
+    // height: 3em;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-align: center;
+    line-height: 3em;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: 0.7s;
+    margin: 1em;
+    --n: 0;
+
+    &:hover {
+      color: black;
+
+      // box-shadow: 0px 0px 0px 5px var(--c);
+      span {
+        transform: translateY(0) scale(2);
+      }
+    }
+
+    span {
+      position: absolute;
+      margin: 0;
+      padding: 0;
+      aspect-ratio: 1;
+      min-width: 20%;
+      top: 0;
+      min-height: 100%;
+      background-color: var(--c);
+      transform: translateY(150%);
+      border-radius: 50%;
+      left: calc((var(--n) - 1) * 30%);
+      transition: 0.7s;
+      transition-delay: calc((var(--n) - 1) * 0.08s);
+      z-index: -1;
+
+      &:nth-child(1) {
+        --n: 1;
+      }
+      &:nth-child(2) {
+        --n: 2;
+      }
+      &:nth-child(3) {
+        --n: 3;
+      }
+      &:nth-child(4) {
+        --n: 4;
+      }
+    }
+  }
+</style>

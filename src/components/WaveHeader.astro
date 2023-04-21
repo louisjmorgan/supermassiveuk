@@ -1,0 +1,45 @@
+---
+const props = Astro.props;
+---
+
+<section {...props}>
+  <div class="top-wave w-full flex flex-col justify-between" id="about">
+    <svg
+      class="p-0 m-0"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1440 320"
+      ><path
+        fill="black"
+        fill-opacity="1"
+        stroke-color="black"
+        d="M0,128L30,144C60,160,120,192,180,192C240,192,300,160,360,170.7C420,181,480,235,540,245.3C600,256,660,224,720,202.7C780,181,840,171,900,170.7C960,171,1020,181,1080,176C1140,171,1200,149,1260,144C1320,139,1380,149,1410,154.7L1440,160L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"
+      ></path></svg
+    >
+    <div class="w-full flex flex-col items-center">
+      <div class="w-1/2 flex flex-col items-center">
+        <h1
+          class="w-full font-display z-10 text-5xl text-white flex flex-col items-center gap-3 mb-12"
+        >
+          <span class="font-sans self-start">We are</span><span
+            class="text-white text-8xl">SuperMassive</span
+          >
+        </h1>
+        <p class="self-end text-2xl text-white font-sans max-w-[30ch]">
+          Dedicated to bringing exciting interactive art to the UK.
+        </p>
+      </div>
+    </div>
+    <svg
+      class="p-0 m-0"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1440 320"
+      ><path
+        fill="black"
+        fill-opacity="1"
+        stroke-color="black"
+        stroke-width="10px"
+        d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+      ></path></svg
+    >
+  </div>
+</section>
