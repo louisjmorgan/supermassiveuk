@@ -1,0 +1,36 @@
+---
+import { Cloudinary } from "@cloudinary/url-gen";
+import type { IDeliveryAction } from "@cloudinary/url-gen/actions/delivery";
+import type { HTMLAttributes } from "astro/types";
+
+const cld = new Cloudinary({
+  cloud: {
+    cloudName: "dzzhteqkx",
+  },
+});
+
+const { src, type } = Astro.props;
+// let posterSrc;
+// if (poster) {
+//   posterSrc = cld.image(poster);
+//   if (poster.startsWith("https://")) {
+//     posterSrc.setDeliveryType("fetch");
+//   }
+// }
+
+let vidSrc = cld
+  .video(src)
+  .format("auto")
+  .delivery("q_auto" as unknown as IDeliveryAction);
+
+if (src.startsWith("https://")) {
+  vidSrc.setDeliveryType("fetch");
+}
+
+interface Props extends HTMLAttributes<"source"> {
+  src: string;
+  type: HTMLAttributes<"source">["type"];
+}
+---
+
+<source src={vidSrc.toURL()} type={type} />

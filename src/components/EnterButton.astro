@@ -2,7 +2,7 @@
 const { href, text, id, children, color } = Astro.props;
 ---
 
-<button class="btn py-4 px-3 sm:px-5 lg:px-10" id={id}>
+<button class="btn py-4 px-3 sm:px-5 lg:px-10 leading-3 sm:leading-10" id={id}>
   <slot />
   <div>
     <span></span><span></span><span></span><span></span><span></span>
@@ -23,7 +23,6 @@ const { href, text, id, children, color } = Astro.props;
     font-weight: bold;
     letter-spacing: 0.1em;
     text-align: center;
-    line-height: 3em;
     position: relative;
     overflow: hidden;
     z-index: 1;

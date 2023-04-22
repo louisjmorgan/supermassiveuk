@@ -1,27 +1,28 @@
 ---
-import { Cloudinary } from '@cloudinary/url-gen'
+import { Cloudinary } from "@cloudinary/url-gen";
+import type { IDeliveryAction } from "@cloudinary/url-gen/actions/delivery";
+import type { HTMLAttributes } from "astro/types";
 
 const cld = new Cloudinary({
-	cloud: {
-		cloudName: "dzzhteqkx"
-	}
-})
+  cloud: {
+    cloudName: "dzzhteqkx",
+  },
+});
 
-const {src, ...props} = Astro.props
+const { src, ...props } = Astro.props;
 
-let cldSrc = cld.image(src)
+let cldSrc = cld
+  .image(src)
+  .format("auto")
+  .delivery("q_auto" as unknown as IDeliveryAction);
 
-if (src.startsWith('https://')) {
-  cldSrc.setDeliveryType('fetch')
+if (src.startsWith("https://")) {
+  cldSrc.setDeliveryType("fetch");
 }
 
-interface Props {
-  src: string,
-  width: string,
-  height: string,
-  alt: string
+interface Props extends HTMLAttributes<"img"> {
+  src: string;
 }
-
 ---
 
-<img src={cldSrc.toURL()} loading="lazy" {...props} />
+<img src={cldSrc.toURL()} {...props} />
