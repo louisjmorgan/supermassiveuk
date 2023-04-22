@@ -10,13 +10,6 @@ const cld = new Cloudinary({
 });
 
 const { src, type } = Astro.props;
-// let posterSrc;
-// if (poster) {
-//   posterSrc = cld.image(poster);
-//   if (poster.startsWith("https://")) {
-//     posterSrc.setDeliveryType("fetch");
-//   }
-// }
 
 let vidSrc = cld
   .video(src)

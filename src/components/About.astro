@@ -45,46 +45,25 @@ import WaveHeader from "./WaveHeader.astro";
   </div>
 </section>
 
-<style lang="scss">
-  // #about {
-  //   scroll-margin: 10rem;
-  // }
+<style>
   .wave {
-    // background: #f0f0f0;
-    background: linear-gradient(
-      248deg,
-      #e91e63,
-      #f44336,
-      #ff5722,
-      #ff9800,
-      #ffc107,
-      // #ffeb3b,
-      // #cddc39,
-      #8bc34a,
-      #4caf50,
-      #009688,
-      #2196f3,
-      #3f51b5,
-      #8a4af3,
-      #673ab7
+    background: var(
+      --rainbow-gradient
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    // background-attachment: fixed;
-    // background-position: center;
-    // background-repeat: no-repeat;
-    // background-size: cover;
+
     height: 100%;
     background-size: 600% 600%;
     animation: gradient 60s ease-in-out infinite;
-    @keyframes gradient {
-      0% {
-        background-position: right;
-      }
-      50% {
-        background-position: left;
-      }
-      100% {
-        background-position: right;
-      }
+  }
+  @keyframes gradient {
+    0% {
+      background-position: right;
+    }
+    50% {
+      background-position: left;
+    }
+    100% {
+      background-position: right;
     }
   }
 </style>
