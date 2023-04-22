@@ -1,4 +1,5 @@
 ---
+import type { IDeliveryAction } from "@cloudinary/url-gen/actions/delivery";
 import CldImage from "./CldImage.astro";
 import CldSource from "./CldSource.astro";
 import EnterButton from "./EnterButton.astro";
@@ -11,7 +12,10 @@ const cld = new Cloudinary({
 });
 
 let posterSrc;
-posterSrc = cld.image("supermassive-splash-fallback");
+posterSrc = cld
+  .image("supermassive-splash-fallback")
+  .format("auto")
+  .delivery("q_auto" as unknown as IDeliveryAction);
 ---
 
 <section class="flex flex-col h-screen box">
