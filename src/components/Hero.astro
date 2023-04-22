@@ -2,18 +2,27 @@
 import CldImage from "./CldImage.astro";
 import CldSource from "./CldSource.astro";
 import EnterButton from "./EnterButton.astro";
+import { Cloudinary } from "@cloudinary/url-gen";
 
-const { src, poster } = Astro.props;
+const cld = new Cloudinary({
+  cloud: {
+    cloudName: "dzzhteqkx",
+  },
+});
+
+let posterSrc;
+posterSrc = cld.image("supermassive-splash-fallback");
 ---
 
 <section class="flex flex-col h-screen box">
-  <div class="w-100 relative basis-4/5">
+  <div class="w-100 relative basis-2/3 md:basis-4/5">
     <video
       muted
       autoplay
       id="splash-video"
       loop={false}
       controls={false}
+      poster={posterSrc.toURL()}
       class="absolute h-full w-full top-0 left-0 object-fit"
       aria-label="Welcome to supermassive.uk"
     >
@@ -29,9 +38,11 @@ const { src, poster } = Astro.props;
       This browser doesn't support HTML5 video.
     </video>
   </div>
-  <div class="basis-1/5 flex flex-col justify-start items-center m-0 p-0">
+  <div
+    class="basis-1/3 md:basis-1/5 flex flex-col justify-start items-center m-0 p-0"
+  >
     <EnterButton color="white" id="enter-button">
-      <a href="#about" class="text-4xl font-display">ENTER</a>
+      <a href="#about" class="font-display text-2xl sm:text-3xl">ENTER</a>
     </EnterButton>
   </div>
 </section>
