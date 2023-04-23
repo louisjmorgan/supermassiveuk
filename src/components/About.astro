@@ -3,7 +3,7 @@ import EnterButton from "./EnterButton.astro";
 import WaveHeader from "./WaveHeader.astro";
 ---
 
-<WaveHeader class="wave">
+<WaveHeader class="wave relative overflow-hidden w-full">
   <div
     class="w-full flex flex-col items-center break-words scroll-my-16 md:scroll-my-32"
     id="about"
@@ -47,23 +47,10 @@ import WaveHeader from "./WaveHeader.astro";
 
 <style>
   .wave {
-    background: var(
+    /* background: var(
       --rainbow-gradient
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-    height: 100%;
-    background-size: 600% 600%;
-    animation: gradient 60s ease-in-out infinite;
-  }
-  @keyframes gradient {
-    0% {
-      background-position: right;
-    }
-    50% {
-      background-position: left;
-    }
-    100% {
-      background-position: right;
-    }
+    /* background-size: 600% 600%; */
   }
 </style>
