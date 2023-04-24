@@ -3,12 +3,14 @@ import EnterButton from "./EnterButton.astro";
 import WaveHeader from "./WaveHeader.astro";
 ---
 
-<WaveHeader class="wave relative overflow-hidden w-full">
+<WaveHeader
+  class="relative w-full h-screen min-h-[55rem] py-24 sm:py-36 xl:py-48 overflow-hidden"
+  id="about"
+>
   <div
-    class="w-full flex flex-col items-center break-words scroll-my-16 md:scroll-my-32"
-    id="about"
+    class="flex flex-col items-center py-36 mx-auto w-3/4 sm:w-2/3 md:w-[70ch] break-words"
   >
-    <div class="w-3/4 sm:w-2/3 md:w-[70ch] flex flex-col items-center m-0 p-0">
+    <div class="flex flex-col items-center m-0 px-0">
       <h1
         class="w-full font-display z-10 text-3xl sm:text-4xl md:text-5xl text-white flex flex-col items-center gap-3 mb-3 md:mb-8 my-12 sm:my-0"
       >
@@ -25,18 +27,10 @@ import WaveHeader from "./WaveHeader.astro";
         Dedicated to bringing exciting interactive art to the UK.
       </p>
     </div>
-  </div>
-</WaveHeader>
-<section
-  class="flex flex-col justify-start items-center w-full mt-6 md:mt-0 px-6 pb-6 sm:px-24 sm:pb-24 mb-16"
->
-  <div class="flex flex-col justify-start items-center max-w-3xl">
-    <!-- <button
-      class="text-3xl text-white hover:bg-[#cddc39] px-12 py-12 rounded-2xl font-sans hover:scale-150 transition-all"
+    <EnterButton
+      color="white"
+      class="underline hover:no-underline mt-24 mx-auto"
     >
-      Attend our launch event!</button
-    > -->
-    <EnterButton color="white" class="underline hover:no-underline">
       <a
         class="font-display text-2xl sm:text-3xl align-middle"
         href="https://www.skiddle.com/whats-on/London/Submarine-Cable-Depot/SuperMassive-Emergence-Day-Tickets/36341285/"
@@ -44,14 +38,4 @@ import WaveHeader from "./WaveHeader.astro";
       >
     </EnterButton>
   </div>
-</section>
-
-<style>
-  .wave {
-    /* background: var(
-      --rainbow-gradient
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-    /* background-size: 600% 600%; */
-  }
-</style>
+</WaveHeader>
